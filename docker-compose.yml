@@ -1,5 +1,5 @@
 web:
-  container_name: lamp_apache
+  container_name: premiolupo_web
   build: ./php/
   ports:
     - "80:80"
@@ -10,10 +10,18 @@ web:
     - ./sites:/var/www/html
     - ./sites-enabled:/etc/apache2/sites-enabled
 db:
-  container_name: lamp_db
+  container_name: premiolupo_db
   image: "mysql:5.7" 
   # or mysql:5.6, mysql:8 @see https://github.com/docker-library/mysql
   ports:
     - "3306:3306"
+  volumes:
+    - dbdata:/var/lib/mysql
+    - ./sites/premiolupo.localhost/db:/docker-entrypoint-initdb.d/:ro
   environment:
     MYSQL_ROOT_PASSWORD: root
+    MYSQL_HOST: localhost
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: wordpress
+    MYSQL_NAME: wordpress
+  restart: always
