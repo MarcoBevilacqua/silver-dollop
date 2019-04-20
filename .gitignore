@@ -1,3 +1,2 @@
-sites/*/*/*
-!sites/premiolupo.localhost/html/wp-content/themes
-!sites/premiolupo.localhost/db
+sites/localhost/
+.idea/
