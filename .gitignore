@@ -1,6 +1,3 @@
 sites/*/*/*
-!sites/localhost/html/index.php
-!sites/localhost/html/.gitkeep
-!sites/localhost/log/.gitkeep
-!sites/test.localhost/html/.gitkeep
-!sites/test.localhost/log/.gitkeep
+!sites/premiolupo.localhost/html/wp-content/themes
+!sites/premiolupo.localhost/db
